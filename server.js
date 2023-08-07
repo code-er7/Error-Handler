@@ -3,6 +3,10 @@ import express from 'express';
 const app = express();
 class ErrorHandler extends Error {
   constructor(message , statusCode){ 
+     //we have to use super before the this keyword in js 
+     // and we are setting message property to the parent class
+     //so when we search message in the obj of this class first it will search it in this class and if not found
+     //it will searh it in parent class 
      super(message);
      this.statusCode = statusCode;
   }  
